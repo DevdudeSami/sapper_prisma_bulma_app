@@ -17,4 +17,5 @@ A wrapper to quickly start a [Sapper](https://sapper.svelte.dev) web app, with a
     4. Install npm dependencies: `npm install`
     5. Start docker: `docker-compose up -d`
     6. Deploy and generate prisma: `prisma deploy; prisma generate`
-    7. Verify prisma is running by going to `http://localhost:4000`
+    7. Start the GraphQL server: `node index.js`
+    8. Verify prisma is running by going to `http://localhost:4000` (you should see a GraphQL playground)
