@@ -2,12 +2,14 @@ const { GraphQLServer } = require('graphql-yoga')
 const { prisma } = require('./generated/prisma-client')
 
 // Import your resolvers here from ./resolvers
-import Query from './resolvers/Query'
-import Mutation from './resolvers/Mutation'
+const Mutation = require('./resolvers/Mutation.js')
+const Query = require('./resolvers/Query.js')
+const Post = require('./resolvers/Post.js')
 
 const resolvers = {
   Query,
   Mutation,
+  Post
 }
 
 const server = new GraphQLServer({
