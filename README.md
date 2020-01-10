@@ -3,8 +3,8 @@ A wrapper to quickly start a [Sapper](https://sapper.svelte.dev) web app, with a
 
 ## Getting started
 
-1. Clone this repo: `git clone https://github.com/DevdudeSami/sapper_prisma_bulma_app.git`
-2. `cd sapper_prisma_bulma_app`
+1. Clone this repo: `npx degit https://github.com/DevdudeSami/sapper_prisma_bulma_app.git myApp`
+2. `cd myApp`
 3. Run sapper:
     1. `cd sapper`
     2. Install npm dependencies: `npm install`
