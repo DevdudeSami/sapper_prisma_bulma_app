@@ -3,8 +3,17 @@
 
 type Query {
 	userPosts(userID: ID!): [Post!]!
+
+	checkPermission: String
 }
 
 type Mutation {
 	createPost(text: String!, userID: ID!): Post
+	signup(email: String!, password: String!, name: String!): AuthPayload
+  login(email: String!, password: String!): AuthPayload
+}
+
+type AuthPayload {
+  token: String
+  user: User
 }

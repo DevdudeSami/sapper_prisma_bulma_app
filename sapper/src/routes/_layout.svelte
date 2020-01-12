@@ -1,6 +1,9 @@
 <script>
 	import Nav from '../components/Nav.svelte';
 
+	import { session } from "../stores";
+	session.init()
+
 	export let segment;
 </script>
 
