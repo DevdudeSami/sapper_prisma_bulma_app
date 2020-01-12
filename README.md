@@ -3,14 +3,19 @@ A wrapper to quickly start a [Sapper](https://sapper.svelte.dev) web app, with a
 
 ## Getting started
 
-1. Clone this repo: `npx degit https://github.com/DevdudeSami/sapper_prisma_bulma_app.git myApp`
-2. `cd myApp`
-3. Run sapper:
+This branch has an authentication example using a [Redis server]() to store session information.
+
+1. Install and run a redis server:
+    1. 'sudo apt-get install redis-server'
+    2. 'redis-server'
+2. Clone this repo: `npx degit https://github.com/DevdudeSami/sapper_prisma_bulma_app.git myApp`
+3. `cd myApp`
+4. Run sapper:
     1. `cd sapper`
     2. Install npm dependencies: `npm install`
     3. Run: `npm run dev`
     4. Verify it's running by going to `http://localhost:3000`
-4. Start the Prisma server
+5. Start the Prisma server
     1. Install prisma: `npm install -g prisma`
     2. Make sure docker is set up (follow the [instructions on their website](https://www.docker.com/products/docker-desktop))
     3. `cd db`
