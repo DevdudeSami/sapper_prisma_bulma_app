@@ -8,7 +8,7 @@ This branch has an authentication example using a [Redis server](https://redis.i
 1. Install and run a redis server:
     1. `sudo apt-get install redis-server`
     2. `redis-server`
-2. Clone this repo: `npx degit https://github.com/DevdudeSami/sapper_prisma_bulma_app.git myApp`
+2. Clone this repo: `npx degit https://github.com/DevdudeSami/sapper_prisma_bulma_app.git#authentication myApp`
 3. `cd myApp`
 4. Run sapper:
     1. `cd sapper`
