@@ -3,7 +3,7 @@ A wrapper to quickly start a [Sapper](https://sapper.svelte.dev) web app, with a
 
 ## Getting started
 
-This branch has an authentication example using a [Redis server]() to store session information.
+This branch has an authentication example using a [Redis server](https://redis.io) to store session information.
 
 1. Install and run a redis server:
     1. 'sudo apt-get install redis-server'
