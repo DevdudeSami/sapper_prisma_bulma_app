@@ -4,10 +4,10 @@
 	import { client } from '../gqlClient'
 	import { goto } from '@sapper/app'
 
-	let name
-	let email
-	let password
-	let confirmPassword
+	let name = ""
+	let email = ""
+	let password = ""
+	let confirmPassword = ""
 
 	let loading = false
 
@@ -49,7 +49,7 @@
 		<div class="field-body">
 			<div class="field">
 				<div class="control has-icons-left has-icons-right">
-					<input bind:value={name} class="input is-primary is-expanded" type="text" placeholder="" value="">
+					<input bind:value={name} class="input is-primary is-expanded" type="text" placeholder="">
 					<span class="icon is-small is-left">
 						<i class="fas fa-user"></i>
 					</span>
@@ -65,7 +65,7 @@
 		<div class="field-body">
 			<div class="field">
 				<div class="control has-icons-left has-icons-right">
-					<input bind:value={email} class="input is-primary is-expanded" type="email" placeholder="" value="">
+					<input bind:value={email} class="input is-primary is-expanded" type="email" placeholder="">
 					<span class="icon is-small is-left">
 						<i class="fas fa-envelope"></i>
 					</span>
@@ -81,7 +81,7 @@
 		<div class="field-body">
 			<div class="field">
 				<div class="control has-icons-left has-icons-right">
-					<input bind:value={password} class="input is-primary is-expanded" type="password" placeholder="" value="">
+					<input bind:value={password} class="input is-primary is-expanded" type="password" placeholder="">
 					<span class="icon is-small is-left">
 						<i class="fas fa-lock"></i>
 					</span>
@@ -97,7 +97,7 @@
 		<div class="field-body">
 			<div class="field">
 				<div class="control has-icons-left has-icons-right">
-					<input bind:value={confirmPassword} class="input is-primary is-expanded" type="password" placeholder="" value="">
+					<input bind:value={confirmPassword} class="input is-primary is-expanded" type="password" placeholder="">
 					<span class="icon is-small is-left">
 						<i class="fas fa-lock"></i>
 					</span>

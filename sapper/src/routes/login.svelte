@@ -16,8 +16,8 @@
 	import { goto, stores } from '@sapper/app'
 	import { session } from '../stores'
 	
-	let email
-	let password
+	let email = ""
+	let password = ""
 	
 	let loading = false
 
@@ -48,7 +48,7 @@
 
 	<div class="field">
 		<div class="control has-icons-left has-icons-right">
-			<input bind:value={email} class="input is-primary" type="email" placeholder="Email" value="">
+			<input bind:value={email} class="input is-primary" type="email" placeholder="Email">
 			<span class="icon is-small is-left">
 				<i class="fas fa-envelope"></i>
 			</span>
@@ -57,7 +57,7 @@
 	
 	<div class="field">
 		<div class="control has-icons-left has-icons-right">
-			<input bind:value={password} class="input is-primary" type="password" placeholder="Password" value="">
+			<input bind:value={password} class="input is-primary" type="password" placeholder="Password">
 			<span class="icon is-small is-left">
 				<i class="fas fa-lock"></i>
 			</span>

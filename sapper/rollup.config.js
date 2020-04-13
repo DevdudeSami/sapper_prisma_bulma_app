@@ -1,13 +1,28 @@
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json'
 import svelte from 'rollup-plugin-svelte';
 import babel from 'rollup-plugin-babel';
 import postcss from 'rollup-plugin-postcss'
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
+import autoPreprocess from 'svelte-preprocess'
 
+const preprocessOptions = {
+  scss: {
+    includePaths: [
+      'node_modules',
+      'src'
+    ]
+  },
+  postcss: {
+    plugins: [
+      require('autoprefixer'),
+    ]
+  }
+}
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
@@ -27,7 +42,8 @@ export default {
 			svelte({
 				dev,
 				hydratable: true,
-				emitCss: true
+				emitCss: true,
+				preprocess: autoPreprocess(preprocessOptions)
 			}),
 			resolve({
 				browser: true,
@@ -55,7 +71,8 @@ export default {
 			!dev && terser({
 				module: true
 			}),
-			postcss()
+			postcss(),
+			json()
 		],
 
 		onwarn,
@@ -71,12 +88,14 @@ export default {
 			}),
 			svelte({
 				generate: 'ssr',
-				dev
+				dev,
+				preprocess: autoPreprocess(preprocessOptions)
 			}),
 			resolve({
 				dedupe
 			}),
-			commonjs()
+			commonjs(),
+			postcss()
 		],
 		external: Object.keys(pkg.dependencies).concat(
 			require('module').builtinModules || Object.keys(process.binding('natives'))

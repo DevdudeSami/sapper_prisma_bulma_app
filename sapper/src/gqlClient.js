@@ -8,7 +8,7 @@ export function client() {
   const user = get(session).user
   
   return new ApolloClient({
-    uri: 'http://localhost:4000',
+    uri: process.env.GQL_API_SERVER,
     fetch,
     request: operation => {
       operation.setContext({

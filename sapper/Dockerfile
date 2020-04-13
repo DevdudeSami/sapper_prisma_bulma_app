@@ -1,0 +1,16 @@
+# Build the app
+FROM node:12-slim as build
+
+ARG PRISMA_URI
+ARG PORT
+ENV PRISMA_URI=${PRISMA_URI}
+ENV PORT=${PORT}
+ENV MINIO_ACCESS_KEY=${MINIO_ACCESS_KEY}
+ENV MINIO_SECRET_KEY=${MINIO_SECRET_KEY}
+USER root
+WORKDIR /sapper
+COPY ./ /sapper
+
+EXPOSE 3000
+
+CMD ./docker-scripts/entrypoint.sh
