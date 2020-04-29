@@ -1,28 +1,31 @@
-import resolve from '@rollup/plugin-node-resolve';
-import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json'
+import resolve from '@rollup/plugin-node-resolve';
+import replace from '@rollup/plugin-replace';
 import svelte from 'rollup-plugin-svelte';
 import babel from 'rollup-plugin-babel';
-import postcss from 'rollup-plugin-postcss'
 import { terser } from 'rollup-plugin-terser';
+import postcss from 'rollup-plugin-postcss'
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import autoPreprocess from 'svelte-preprocess'
 
 const preprocessOptions = {
-  scss: {
-    includePaths: [
-      'node_modules',
-      'src'
-    ]
-  },
-  postcss: {
-    plugins: [
-      require('autoprefixer'),
-    ]
-  }
+	transformers: {
+		scss: {
+			includePaths: [
+				'node_modules',
+				'src'
+			]
+		},
+		postcss: {
+			plugins: [
+				require('autoprefixer'),
+			]
+		}
+	}
 }
+
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
@@ -37,7 +40,7 @@ export default {
 		plugins: [
 			replace({
 				'process.browser': true,
-				'process.env.NODE_ENV': JSON.stringify(mode)
+				'process.env.NODE_ENV': JSON.stringify(mode),
 			}),
 			svelte({
 				dev,
