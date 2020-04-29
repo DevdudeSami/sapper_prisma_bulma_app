@@ -7,8 +7,17 @@ import { session } from './stores'
 export function client() {
   const user = get(session).user
   
+  let endpoint
+
+  if (!process.browser) {
+    global.window = {}; // Temporarily define window for server-side
+    endpoint = 'http://gql-api:4000'
+  } else {
+    endpoint = 'http://localhost:4000/'
+  }
+
   return new ApolloClient({
-    uri: process.env.GQL_API_SERVER,
+    uri: endpoint,
     fetch,
     request: operation => {
       operation.setContext({
