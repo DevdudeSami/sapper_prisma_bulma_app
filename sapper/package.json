@@ -40,6 +40,6 @@
     "rollup-plugin-svelte": "^5.0.1",
     "rollup-plugin-terser": "^4.0.4",
     "rollup-plugin-postcss": "^2.0.3",
-    "node-sass": "^4.13.0"
+    "node-sass": "^4.13.1"
   }
 }
